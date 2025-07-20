@@ -1,63 +1,111 @@
 document.addEventListener("DOMContentLoaded", function() {
-  fetch('data/stories.json')
-    .then(response => response.json())  // Convert the response to JSON
-    .then(stories => {
-      function showStories(storiesToShow) {
-        const container = document.getElementById('story-container');
-        container.innerHTML = '';
 
-        // Loop through each story and create a card
-        storiesToShow.forEach(story => {
-          const card = document.createElement('div'); 
-          card.classList.add('col-12'); 
-
-          card.innerHTML = `
-          <div class="card mb-5">
-            <div class="row g-0">
-              <div class="col-md-4 img-container">
-                <img src="${story.image}" class="img-fluid img" alt="${story.alt}">
-                 <div class="img-overlay"></div>
-              </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h3 class="article-headline">${story.title}</h5>
-                    <p class="article-body">${story.description}</p>
-                    <p class="article-details">${story.researcher}</p>
-                    <div class="article-tag">
-                      ${story.tags.join(', ')}
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </div>
-          `;
-
-          // Add the card to the container
-          container.appendChild(card);
-        });
+  let allStories = [];
+  
+  loadStories();
+  
+  function loadStories() {
+      fetch('data/stories.json')
+          .then(function(response) {
+              return response.json();
+          })
+          .then(function(stories) {
+              allStories = stories;
+              displayStories(allStories);
+              addFilterButtons();
+          })
+          .catch(function(error) {
+              console.log('Error loading stories:', error);
+          });
+  }
+  
+  function displayStories(storiesToShow) {
+      const container = document.getElementById('story-container');
+      container.innerHTML = '';
+    
+      for (let i = 0; i < storiesToShow.length; i++) {
+          const story = storiesToShow[i];
+          const storyHTML = renderStory(story);
+          container.innerHTML = container.innerHTML + storyHTML;
       }
-
-      showStories(stories);
-
-      // Filter buttons and add event listeners
-      const buttons = document.querySelectorAll('.tag');
-      buttons.forEach(button => {
-        button.addEventListener('click', function() {
-          const tag = this.getAttribute('data-tag');
-
-          if (tag === 'all') {
-            showStories(stories);
-          } else {
-            // Filter stories by tag
-            const filteredStories = stories.filter(story => story.tags.includes(tag));
-            showStories(filteredStories);
+  }
+  
+  function renderStory(story) {
+      // Put tags in string
+      let tagsText = '';
+      for (let i = 0; i < story.tags.length; i++) {
+          if (i > 0) {
+              tagsText = tagsText + ', ';
           }
-        });
-      });
-    })
-    .catch(error => {
-      console.error('Error loading stories:', error);
-    });
+          tagsText = tagsText + story.tags[i];
+      }
+      
+      const html = 
+          '<div class="col-12">' +
+              '<div class="card mb-5">' +
+                  '<div class="row g-0">' +
+                      '<div class="col-md-4 img-container">' +
+                          '<img src="' + story.image + '" class="img-fluid img" alt="' + story.alt + '">' +
+                          '<div class="img-overlay"></div>' +
+                      '</div>' +
+                      '<div class="col-md-8">' +
+                          '<div class="card-body">' +
+                              '<h3 class="article-headline">' + story.title + '</h3>' +
+                              '<p class="article-body">' + story.description + '</p>' +
+                              '<p class="article-details">' + story.researcher + '</p>' +
+                              '<div class="article-tag">' + tagsText + '</div>' +
+                          '</div>' +
+                      '</div>' +
+                  '</div>' +
+              '</div>' +
+          '</div>';
+          
+      return html;
+  }
+  
+  function addFilterButtons() {
+      const buttons = document.querySelectorAll('.tag');  
+      for (let i = 0; i < buttons.length; i++) {
+          const button = buttons[i];
+          
+          button.addEventListener('click', function() {
+              filterClick(button);
+          });
+      }
+  }
+ 
+  function filterClick(clickedButton) {
+      const selectedTag = clickedButton.getAttribute('data-tag');
+
+      if (selectedTag === 'all') {
+          displayStories(allStories);
+      } else {
+          const filteredStories = filterStoriesByTag(allStories, selectedTag);
+          displayStories(filteredStories);
+      }
+  }
+  
+  function filterStoriesByTag(stories, tagToFind) {
+      const matchingStories = [];
+      for (let i = 0; i < stories.length; i++) {
+          const story = stories[i];
+          if (storyHasTag(story, tagToFind)) {
+              matchingStories.push(story);
+          }
+      }
+      
+      return matchingStories;
+  }
+  
+  function storyHasTag(story, tagToFind) {
+      for (let i = 0; i < story.tags.length; i++) {
+          if (story.tags[i] === tagToFind) {
+              return true;
+          }
+      }
+      return false;
+  }
+  
 });
 
 // Fade in

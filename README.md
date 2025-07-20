@@ -7,14 +7,18 @@ This is a microsite showcasing featured impact stories from the Pittsburgh Super
 ## Setup Instructions
 
 ### Clone the repository
-git clone https://github.com/your-username/psc-impact-stories.git
+```
+git clone https://github.com/kassidychan/psc-impact-stories.git
 cd psc-impact-stories
+```
 
 ### Open in browser (no dependencies required)
 open index.html
 
 ### Or serve locally
+```
 python3 -m http.server 8000
+```
 visit http://localhost:8000
 
 ## Dependencies
