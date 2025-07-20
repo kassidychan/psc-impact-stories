@@ -2,22 +2,117 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <nav class="navbar bg-body-tertiary">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="images/psc-logo.jpg"
-             alt="Pittsburgh Supercomputing Center"
-             class="img-fluid"
-             style="max-width: 200px; height: auto;">
-      </a>
-    </div>
-  </nav>  
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
   <title>PSC Impact Stories</title>
+  <meta name="description" content="Discover how the Pittsburgh Supercomputing Center enables breakthrough research, education, and innovation through high-performance computing.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Open+Sans:ital,wght@0,400;0,700&family=Source+Serif+Pro:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Open+Sans+Condensed:wght@300;900&family=Source+Serif+Pro:wght@400;900&display=swap" rel="stylesheet" />
   <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
+    <header>
+        <nav class="navbar custom-navbar bg-white sticky-top" role="navigation" aria-label="Main navigation">
+            <div class="container">
+              <a class="navbar-brand" href="https://www.psc.edu" target="_blank" aria-label="Pittsburgh Supercomputing Center website opens in new window">
+                <img src="images/psc-logo.jpg" alt="Pittsburgh Supercomputing Center Logo" class="logo-img img-fluid">
+              </a>
+            </div>
+        </nav>      
+        
+        <div class="hero-image-container mb-5" role="banner">
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-text">
+              <h1 class="psc-h1">PSC in Action</h1>
+              <p class="psc-tagline">High Performance, High Impact</p>
+            </div>
+        </div>
+    </header>
+    
+    <main id="main-content" role="main">
+       <!-- Intro Section -->
+       <section class="container d-flex flex-wrap min-vh-75" aria-labelledby="intro-heading">
+        <div class="col-12 col-xl-8 d-flex text-white p-2 p-sm-3 p-md-4 p-lg-5 order-2 order-xl-1">
+          <div class="fade-in">
+            <h2 id="intro-heading" class="psc-h2">PSC in Action: Real-World Impacts</h2>
+            <p class="psc-p">
+              The Pittsburgh Supercomputing Center (PSC) Impact Stories showcase the research, education, and innovation happening through access to high-performance computing at the Pittsburgh Supercomputing Center. These stories go beyond the technical specifications and highlight the researchers making breakthrough discoveries, the educators inspiring the next generation, and the students pushing the boundaries of what's possible.
+            </p>
+            <p class="psc-p">
+              From identifying potential Parkinson's treatments using AI to uncover genetic secrets of vocal learning, from training water treatment engineers through virtual simulations to advancing national AI research infrastructure, each story demonstrates how PSC's specialized systems, like Bridges-2, Neocortex, and Anton 2, serve as catalysts for real-world impact. Supported by our expert staff and national initiatives, including ACCESS and the NAIRR Pilot, these achievements represent more than individual successes.
+            </p>
+            <p class="psc-p">
+              They illustrate PSC's commitment to being a trusted partner where researchers can get research done. PSC continues to accelerate discovery across disciplines while fostering diversity, collaboration, and workforce development in the research community. Each impact story reflects our 35+ years of experience enabling computational breakthroughs that address society's most pressing challenges.
+            </p>
+          </div>
+        </div>
+        <div class="ol-12 col-xl-4 p-2 p-sm-3 p-md-4 d-flex align-items-center justify-content-center order-1 order-xl-2">
+          <img src="images/awards.jpg" 
+               alt="High Performance Computing Achievements recognized at SC24 Conference"
+               class="img-fluid h-100 object-fit-cover">
+        </div>
+      </section> 
+
+        <!-- Story Section -->
+        <section class="container p-sm-3 p-md-4 p-lg-5" aria-labelledby="stories-heading">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2 id="stories-heading" class="psc-h2">Featured Stories</h2>
+          </div>
+
+          <div class="text-center mb-5 fade-in">
+              <div role="group" aria-label="Story category filters">
+                <button type="button" class="tag active" data-tag="all" aria-pressed="true">ALL</button>
+                <button type="button" class="tag" data-tag="AI" aria-pressed="false">AI</button>
+                <button type="button" class="tag" data-tag="Healthcare" aria-pressed="false">HEALTHCARE</button>
+                <button type="button" class="tag" data-tag="Climate" aria-pressed="false">CLIMATE</button>
+                <button type="button" class="tag" data-tag="Education" aria-pressed="false">EDUCATION</button>
+                <button type="button" class="tag" data-tag="Genomics" aria-pressed="false">GENOMICS</button>
+                <button type="button" class="tag" data-tag="Bridges-2" aria-pressed="false">BRIDGES-2</button>
+                <button type="button" class="tag" data-tag="Anton" aria-pressed="false">ANTON</button>
+              </div>
+          </div>
+
+          <!-- Stories -->
+          <section id="story-container" class="row" aria-label="Stories">
+              <!-- Cards will go here -->
+          </section>
+          
+          <div class="text-center mb-5">
+            <button type="button" class="psc-button fade-in">READ MORE STORIES</button>
+          </div>
+        </section>
+    </main>
+
+    <!-- Form -->
+    <section class="container" aria-labelledby="submit-form">
+      <div class="overlay-text hero-image-container py-5 fade-in">    
+        <div class="overlay"></div>
+        <div class="container overlay-text">
+        <h2 id="submit-form" class="psc-h2 text-white">Submit Your Story!</h2>
+        <p class="psc-p mb-4 text-white">If PSC helped your research, we'd love to hear about it.</p>
+        <form id="submitForm" class="row g-3">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Your Name *" required id="name" aria-label="Your Name"/>
+          </div>
+          <div class="col-md-6">
+            <input type="email" class="form-control" placeholder="Email *" required id="email" aria-label="Your Email"/>
+          </div>
+          <div class="col-12">
+            <input type="text" class="form-control" placeholder="Story Title *" required id="storyTitle" aria-label="Story Title"/>
+          </div>
+          <div class="col-12 mb-4">
+            <textarea class="form-control" rows="3" placeholder="Short Description *" required id="description" aria-label="Short Description"></textarea>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="psc-button-2" aria-label="Submit story to PSC">SUBMIT STORY</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
+

@@ -1,0 +1,27 @@
+[
+    {
+        "title": "High School Students Study Nanotechnology & AI for Heart Disease Detection",
+        "description": "Tech jobs are one of the fastest growing sectors of the economy, with more open positions and higher wages. But few students get exposed to advanced technologies such as high-performance computing (HPC). This year, a teacher from the prestigious North Carolina School of Science and Mathematics will complete his tenth year leading a unique program that offers computing time to advanced high school students on HPC resources including PSC’s flagship Bridges-2 supercomputer. The students’ work, which has in the past appeared in peer-reviewed journals, includes investigations into repurposing cellular proteins as nanotechnology motors as well as using AI to better detect calcium deposits in the heart’s arteries.",
+        "researcher": "Bob Gotwals, North Carolina School of Science and Mathematics",
+        "tags": ["AI", "Healthcare", "Education", "Bridges-2"],
+        "image": "images/story1.jpeg",
+        "alt": "Illustration of a motor protein dragging a sphere along a microtubule."
+    },
+    {
+      "title": "Enhancing Hurricane Forecasts: A Game-Changer in Lessening Catastrophic Impacts",
+      "description": "Hurricanes have an outsized impact on human safety and economic prosperity. A team from the University of Houston found that, when they reduced estimates of atmospheric friction of storms, their predictions on PSC’s Bridges-2 improved markedly over standard storm predictions. This advancement can promise better planning to lessen the effects of storms on people and possibly aid emergency responses to storm landfalls.",
+      "researcher": "Mostafa Momen, University of Houston",
+      "tags": ["Climate", "Disaster Response", "Bridges-2"],
+      "image": "images/story2.jpeg",
+      "alt": "Palm tree blowing in wind of storm."
+    },
+    {
+      "title": "Anton Simulations Flag How Hepatitis Virus Enters Cell Nucleus",
+      "description": "The hepatitis B virus causes about 800,000 deaths per year, on par with HIV and the malaria parasite. However, as it spreads, it performs a trick that may make it vulnerable to new therapies. Instead of importing its proteins and genes separately into the host cell nucleus, it enters more or less whole through the nuclear pore. Using the second-generation Anton supercomputer developed by D. E. Shaw Research and hosted at PSC, teams led by the universities of Alabama and Delaware revealed the likely motion of a viral protein that helps shrink HBV for insertion into the nucleus, identifying a target for future therapies.",
+      "researcher": "Gino Cingolani, University of Alabama at Birmingham",
+      "tags": ["Genomics", "Healthcare", "Anton"],
+      "image": "images/story3.jpeg",
+      "alt": "3D illustration of hepatitus B virus."
+    }
+  ]
+  
