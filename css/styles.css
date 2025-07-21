@@ -132,6 +132,13 @@
   color: #002058;
 }
 
+.psc-deckhead {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #403E3D;
+}
+
 .article-details {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
